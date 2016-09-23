@@ -11,6 +11,7 @@ module.exports = {
     show: function *(next) {
         //console.log('index');
         yield this.render('admin/create', {
+            layout: 'admin/layout',
             title: "添加课程"
         });
     },

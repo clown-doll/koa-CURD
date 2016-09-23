@@ -13,6 +13,7 @@ module.exports = {
         var courses = yield models.Course.find({});
         try {
             yield this.render('admin/index', {
+                layout: 'admin/layout',
                 title: "课程管理",
                 moment: moment,
                 courses: courses

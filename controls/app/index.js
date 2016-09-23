@@ -13,8 +13,8 @@ module.exports = {
         console.log('index');
         try {
             var courses = yield models.Course.find({}).sort({time: -1});
-            console.log(courses);
             yield this.render('app/index', {
+                layout: 'app/layout',
                 title: "团队培训",
                 moment: moment,
                 courses: courses

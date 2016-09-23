@@ -19,6 +19,7 @@ var path = require('path');
 render(app, {
     root: path.join(__dirname, 'views'),
     viewExt: 'html',
+    layout: false,
     cache: false
 });
 

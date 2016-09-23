@@ -14,6 +14,7 @@ module.exports = {
         var course = yield models.Course.findOne({_id: id});
         try {
             yield this.render('app/detail', {
+                layout: 'app/layout',
                 title: course.title,
                 moment: moment,
                 course: course

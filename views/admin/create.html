@@ -1,13 +1,13 @@
 
-<form action="/admin/handleCreate" method="post" class="course-form">
+<form action="/handleCreate" method="post" class="course-form">
     <h3 class="col-title">添加课程</h3>
 
-    <input type="text" name="title" placeholder="课程标题" />
-    <input type="text" name="grade" placeholder="课程等级" />
-    <input type="text" name="trainees" placeholder="适合人群" />
-    <input type="text" name="lecturer" placeholder="授课导师" />
-    <input type="text" name="time" placeholder="授课时间" />
-    <textarea name="summary" id="" cols="30" rows="10">课程简介</textarea>
+    <label for="title">课程标题</label><input type="text" name="title" placeholder="请填写课程标题" />
+    <label for="grade">课程等级</label><input type="text" name="grade" placeholder="请填写课程等级" />
+    <label for="trainees">适合人群</label><input type="text" name="trainees" placeholder="请填写适合人群" />
+    <label for="lecturer">授课导师</label><input type="text" name="lecturer" placeholder="请填写授课导师" />
+    <label for="time">授课时间</label><input type="text" name="time" placeholder="请填写授课时间" />
+    <label for="summary">课程简介</label><textarea name="summary">请填写课程简介</textarea>
 
-    <input type="submit" value="提交" class="btn-submit">
+    <input type="submit" value="提交" class="btn-form">
 </form>

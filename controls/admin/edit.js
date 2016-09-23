@@ -6,6 +6,7 @@
  **/
 
 var models=require('../../models/models.js');
+var moment = require('moment');
 
 module.exports = {
     show: function *(next) {
@@ -14,7 +15,9 @@ module.exports = {
         //console.log(course);
         try {
             yield this.render('admin/edit', {
+                layout: 'admin/layout',
                 title: course.title,
+                moment: moment,
                 course: course
             });
         } catch (e) {

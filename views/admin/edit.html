@@ -1,12 +1,12 @@
-<form action="/admin/handleEdit" method="post" class="course-form">
+<form action="/handleEdit" method="post" class="course-form">
 	<h3 class="col-title">编辑课程</h3>
 
-	<input type="text" name="title" placeholder="课程标题" value="<%= course.title %>"/>
-	<input type="text" name="grade" placeholder="课程等级" value="<%= course.grade %>" />
-	<input type="text" name="trainees" placeholder="适合人群" value="<%= course.trainees %>" />
-	<input type="text" name="lecturer" placeholder="授课导师" value="<%= course.lecturer %>" />
-	<input type="text" name="time" placeholder="授课时间" value="<%= course.time %>" />
-	<textarea name="summary" id="" cols="30" rows="10"><%= course.summary %></textarea>
+	<label for="title">课程标题</label><input type="text" name="title" placeholder="请填写课程标题" value="<%= course.title %>"/>
+	<label for="grade">课程等级</label><input type="text" name="grade" placeholder="请填写课程等级" value="<%= course.grade %>" />
+	<label for="trainees">适合人群</label><input type="text" name="trainees" placeholder="请填写适合人群" value="<%= course.trainees %>" />
+	<label for="lecturer">授课导师</label><input type="text" name="lecturer" placeholder="请填写授课导师" value="<%= course.lecturer %>" />
+	<label for="time">授课时间</label><input type="text" name="time" placeholder="请填写授课时间" value="<%= moment(course.time).format('YYYY-MM-DD') %>" />
+	<label for="summary">课程简介</label><textarea name="summary" id="" cols="30" rows="10"><%= course.summary %></textarea>
 	<input type="hidden" name="id" value="<%= course._id %>" />
 
 	<input type="submit" value="提交" class="btn-form">
