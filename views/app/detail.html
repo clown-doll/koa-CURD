@@ -1,0 +1,25 @@
+<div>
+	<a href="/">首页</a> &gt; 课程详情
+</div>
+
+<div class="detail">
+	<h1><%= course.title %></h1>
+	<div class="content">
+		<p>
+			<strong>课程简介：</strong>
+			<%= course.summary %>
+		</p>
+		<p>
+			<strong>课程等级：</strong>
+			<%= course.grade %>
+		</p>
+		<p>
+			<strong>适合人群：</strong>
+			<%= course.trainees %>
+		</p>
+		<p>
+			<strong>授课时间：</strong>
+			<%= moment(course.time).format('YYYY-MM-DD') %>
+		</p>
+	</div>
+</div>

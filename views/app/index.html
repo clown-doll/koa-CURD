@@ -1,0 +1,40 @@
+<h3 class="col-title"><span>培训课程安排</span></h3>
+
+<% if (courses.length) { %>
+	<table class="course-content" border="1">
+		<thead>
+			<tr>
+				<th>编号</th>
+				<th>课程标题</th>
+				<th>课程等级</th>
+				<th>授课讲师</th>
+				<th>授课时间</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% courses.forEach(function (course, index) {%>
+				<% if (moment(course.time).isBefore(new Date(), 'day')) { %>
+					<tr class="done">
+						<td><%= index+1 %></td>
+						<td><a href="detail?id=<%= course.id %>" title="<%= course.title %>"><%= course.title %></a></td>
+						<td><%= course.grade %></td>
+						<td><%= course.lecturer %></td>
+						<td><%= moment(course.time).format('YYYY-MM-DD') %></td>
+					</tr>
+				<% } else { %>
+					<tr>
+						<td><%= index+1 %></td>
+						<td><a href="detail?id=<%= course.id %>" title="<%= course.title %>"><%= course.title %></a></td>
+						<td><%= course.grade %></td>
+						<td><%= course.lecturer %></td>
+						<td><%= moment(course.time).format('YYYY-MM-DD') %></td>
+					</tr>
+				<% } %>
+			<% })%>
+		</tbody>
+	</table>
+<% } else { %>
+	<div class="none-data">
+		暂时没有课程安排！
+	</div>
+<% } %>
