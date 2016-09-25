@@ -1,0 +1,69 @@
+.login-register{
+    padding: 50px 0;
+}
+
+.login-register .logo{
+    margin-bottom: 40px;
+    text-align: center;
+}
+.login-register .logo a{
+    display: inline-block;
+    width: 189px;
+    height: 62px;
+    background: url("../images/logo-v1.png");
+    text-indent: -9999em;
+}
+
+/*---------------------- form content --------------------*/
+.course-form{
+    padding: 20px 30px;
+    margin: 0 auto;
+    width: 400px;
+    text-align: center;
+}
+.course-form .col-title{
+    margin-bottom: 15px;
+    text-align: left;
+    font-size: 18px;
+    font-weight: normal;
+    color: #2490ce;
+}
+.course-form label{
+    display: block;
+    padding-bottom: 5px;
+    font-weight: 700;
+    text-align: left;
+}
+.course-form input,
+.course-form textarea{
+    margin-bottom: 20px;
+    padding: 6px;
+    width: 386px;
+    border: 1px solid #d3d3d3;
+    border-radius: 4px;
+}
+
+.course-form textarea{
+    color: #999;
+}
+.course-form .btn-form{
+    display: inline-block;
+    margin: 0 10px;
+    width: 150px;
+    background-color: #2490ce;
+    vertical-align: middle;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+}
+.course-form .btn-form:hover{
+    opacity: 0.9;
+}
+.course-form .btn-cancel{
+    padding: 6px 0;
+    background-color: #9b9b9b;
+    border-radius: 4px;
+}
+.course-form .btn-cancel:hover{
+    text-decoration: none;
+}

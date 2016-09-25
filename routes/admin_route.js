@@ -10,12 +10,26 @@ var admin = require('../controls/admin/admin');
 var edit = require('../controls/admin/edit');
 
 module.exports = function (router) {
-    router.get('/admin', admin.home);
-    router.get('/delete', admin.delete);
-    router.get('/create', create.show);
-    router.get('/edit', edit.show);
-    router.post('/handleCreate', create.handleCreate);
-    router.post('/handleEdit', edit.handleEdit);
+    // 权限控制
+    router.get(/^\/admin/,function *(next) {
+        console.log(this.url);
+        if (this.url === "/admin" || this.url === "/admin/") {
+            this.redirect('/admin/index');
+        }
+        if (this.session.username) {
+            yield next;
+        }else{
+            this.status = 303;
+            this.redirect('/login');
+        }
+    });
+
+    router.get('/admin/index', admin.home);
+    router.get('/admin/delete', admin.delete);
+    router.get('/admin/create', create.show);
+    router.get('/admin/edit', edit.show);
+    router.post('/admin/handleCreate', create.handleCreate);
+    router.post('/admin/handleEdit', edit.handleEdit);
 };
 
 /**

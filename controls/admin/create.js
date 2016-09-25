@@ -12,7 +12,8 @@ module.exports = {
         //console.log('index');
         yield this.render('admin/create', {
             layout: 'admin/layout',
-            title: "添加课程"
+            title: "添加课程",
+            username: this.session.username
         });
     },
     handleCreate: function *(next) {
@@ -23,13 +24,16 @@ module.exports = {
             lecturer: this.request.body.lecturer,
             summary: this.request.body.summary,
             grade: this.request.body.grade,
-            trainees: this.request.body.trainees
+            trainees: this.request.body.trainees,
+            author: this.session.username
         };
 
         try {
             yield models.Course.create(doc);
-            this.status=303;
-            this.redirect('/admin');
+            this.status = 303;
+            console.log(this.url);
+            this.redirect('/admin/index');
+            console.log(this.url);
         } catch(e) {
             this.body='保存失败: '+e.message;
             console.log(e);

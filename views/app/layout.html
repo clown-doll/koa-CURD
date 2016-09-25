@@ -3,13 +3,32 @@
 <head>
 	<meta charset="UTF-8">
 	<title><%- title %></title>
-	<link rel="stylesheet" href="./css/public.css"/>
+	<link rel="stylesheet" href="./css/reset.css"/>
 	<link rel="stylesheet" href="./css/style.css"/>
 </head>
 <body>
 	<div class="header">
-		<div class="wrapper">
+		<div class="wrapper clearfix">
 			<h2 class="logo"><a href="/">99编辑部 - 知识平台</a></h2>
+			<div class="search">
+				<i></i>
+				<input type="text" placeholder="输入关键字搜索">
+			</div>
+			<ul class="nav">
+				<li>
+					<a href="/admin/create">添加课程</a>
+				</li>
+				<li>
+					<% if (username) {%>
+						欢迎你, <%= username %>
+						<a href="/loginOut">注销</a>
+					<% } else { %>
+						<a href="/login">登录</a>
+						·
+						<a href="/register">注册</a>
+					<% } %>
+				</li>
+			</ul>
 		</div>
 	</div>
 	<div class="wrapper">

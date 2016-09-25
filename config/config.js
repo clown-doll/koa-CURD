@@ -7,6 +7,8 @@
 
 module.exports = {
     PORT: process.env.PORT || 3000,
+    // Cookie码
+    cookieSecret: 'riLbqTemd3NAdUBwUU7nfsuteqwapN',
     mongo: {
         'development': {
             connectionString: 'mongodb://127.0.0.1/course'
@@ -22,4 +24,4 @@ module.exports = {
             }
         }
     }
-}
+};

@@ -19,9 +19,8 @@
 			<td><%= course.lecturer %></td>
 			<td><%= moment(course.time).format('YYYY-MM-DD') %></td>
 			<td>
-				<a href="delete?id=<%= course.id %>">删除</a>
-				<a href="edit?id=<%= course.id %>">编辑</a>
-
+				<a href="/admin/delete?id=<%= course.id %>">删除</a>
+				<a href="/admin/edit?id=<%= course.id %>">编辑</a>
 			</td>
 		</tr>
 		<% })%>
@@ -29,6 +28,6 @@
 </table>
 <% } else { %>
 <div class="none-data">
-	没有课程数据！前往 <a href="create">添加课程</a>
+	没有课程数据！前往 <a href="/admin/create">添加课程</a>
 </div>
 <% } %>

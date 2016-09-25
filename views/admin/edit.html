@@ -1,4 +1,4 @@
-<form action="/handleEdit" method="post" class="course-form">
+<form action="/admin/handleEdit" method="post" class="course-form">
 	<h3 class="col-title">编辑课程</h3>
 
 	<label for="title">课程标题</label><input type="text" name="title" placeholder="请填写课程标题" value="<%= course.title %>"/>
@@ -10,5 +10,5 @@
 	<input type="hidden" name="id" value="<%= course._id %>" />
 
 	<input type="submit" value="提交" class="btn-form">
-	<a href="/admin" class="btn-form btn-cancel">取消</a>
+	<a href="/admin/index" class="btn-form btn-cancel">取消</a>
 </form>

@@ -18,7 +18,8 @@ module.exports = {
                 layout: 'admin/layout',
                 title: course.title,
                 moment: moment,
-                course: course
+                course: course,
+                username: this.session.username
             });
         } catch (e) {
             this.body = "发生错误";

@@ -16,7 +16,8 @@ module.exports = {
                 layout: 'admin/layout',
                 title: "课程管理",
                 moment: moment,
-                courses: courses
+                courses: courses,
+                username: this.session.username
             });
         } catch (e) {
             this.body = "发生错误";
@@ -28,7 +29,7 @@ module.exports = {
         var id = this.query.id;
         try {
             yield models.Course.remove({_id: id});
-            this.redirect('/admin');
+            this.redirect('/admin/index');
         } catch (e) {
             this.body = '删除失败';
             console.log(e);
