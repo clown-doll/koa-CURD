@@ -124,3 +124,23 @@
 .detail .content strong{
     font-weight: 700;
 }
+
+/*col tab*/
+.course-tab{
+    margin-bottom: 20px;
+    border-bottom: 1px solid #d3d3d3;
+}
+.course-tab li{
+    padding: 0 20px;
+    display: inline-block;
+    height: 40px;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: normal;
+}
+.course-tab li.active{
+    border-bottom: 2px solid #2490ce;
+    color: #2490ce;
+}
