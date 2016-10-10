@@ -67,3 +67,24 @@
 .course-form .btn-cancel:hover{
     text-decoration: none;
 }
+.course-form .error-tips{
+    position: relative;
+    display: block;
+    padding: 5px;
+    margin-bottom: 20px;
+    background-color: rgba(210, 13, 0, 0.5);
+    color: #fff;
+}
+.course-form .error-tips .close{
+    display: block;
+    padding: 5px;
+    position: absolute;
+    right: 3px;
+    top: 0;
+    color: #fff;
+    opacity: 0.6;
+}
+.course-form .error-tips .close:hover{
+    opacity: 1;
+    text-decoration: none;
+}

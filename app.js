@@ -44,6 +44,23 @@ route(router);
 admin_route(router);
 app.use(router.routes());
 
+/*app.use(function *(next) {
+    this.status=404;
+    this.body='404 Not Found!';
+});
+
+app.on('error',function (err,ctx) {
+    if (process.env.NODE_ENV!='production') {
+        this.body='500 server error';
+        console.error(err.message);
+        console.error(err);
+    }
+});
+
+app.use(function *() {
+    throw new Error('server error');
+});*/
+
 // 监听
 app.listen(8000);
 console.log('app is listening on 8000 port');

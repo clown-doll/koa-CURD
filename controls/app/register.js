@@ -43,9 +43,26 @@ module.exports = {
             } else {
                 this.body = '此用户名已被占用';
             }
-        } catch(e) {
-            this.body = '注册失败';
-            console.log(e);
+        } catch(err) {
+            //this.body = '注册失败';
+            var errMess = "";
+            switch (err.name) {
+                case 'ValidationError':
+                    for (field in err.errors) {
+                        switch (err.errors[field].kind) {
+                            case 'required':
+                                errMess = err.errors[field].message
+                                break;
+                        }
+                    }
+                    this.status = 400;
+                    break;
+            }
+            yield this.render('app/register', {
+                layout: 'app/layout2',
+                title: '注册',
+                errorTip: errMess
+            });
         }
     }
 };

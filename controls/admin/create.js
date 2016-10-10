@@ -34,9 +34,31 @@ module.exports = {
             console.log(this.url);
             this.redirect('/admin/index');
             console.log(this.url);
-        } catch(e) {
-            this.body='保存失败: '+e.message;
-            console.log(e);
+        } catch(err) {
+            //this.body='保存失败: '+e.message;
+            console.log(err);
+            var errMess = "";
+            switch (err.name) {
+                case 'ValidationError':
+                    for (field in err.errors) {
+                        switch (err.errors[field].kind) {
+                            case 'required':
+                                errMess = err.errors[field].message;
+                                break;
+                            case 'user defined':
+                                errMess = err.errors[field].message;
+                                break;
+                        }
+                    }
+                    this.status = 400;
+                    break;
+            }
+            yield this.render('admin/create', {
+                layout: 'admin/layout',
+                title: "添加课程",
+                username: this.session.username,
+                errorTip: errMess
+            });
         }
     }
 };

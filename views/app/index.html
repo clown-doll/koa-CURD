@@ -73,14 +73,14 @@
 
 
 <script>
-var $courseCol = $(".course-main > .course-col"),
-	$courseTab = $(".course-tab > li");
+var $courseCol = $('.course-main > .course-col'),
+	$courseTab = $('.course-tab > li');
 
-$courseTab.on("click", function () {
+$courseTab.on('click', function () {
 	var $this = $(this),
 		index = $this.index();
 
-	$this.addClass("active").siblings().removeClass("active");
+	$this.addClass('active').siblings().removeClass('active');
 	$courseCol.eq(index).show().siblings().hide();
 });
 </script>
